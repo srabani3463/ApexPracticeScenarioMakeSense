@@ -7,6 +7,7 @@ public static List<Case> getInSequence(){
 
     return [Select Id, Origin, Reason, Priority from Case Limit 20];
 }
+// Check the changes on demo.
 
 
 
