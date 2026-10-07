@@ -1,0 +1,25 @@
+<template>
+    <lightning-card  class="feature-box" title ="This is one way binding from js to HTML">
+<p>The FIFA World cop is going on bewteen the team</p>
+   Team name is { team1 } and  {team2}
+   Time is {time} <br>
+   Total time is {totaltimematch}
+   
+
+
+    </lightning-card>
+    <lightning-card class ="feature-box" title ="This is two way binding from HTML to JS">
+        <lightning-input type="text" value={memberStatus} onchange={updateMember} label="Enter Your Status"> </lightning-input>
+        <lightning-input tyme ="number" onchange ={handlechange} label ="Enter the hour"></lightning-input>
+        <p>
+
+        Member status  values is
+         {memberStatus}
+          </p>
+<p>
+    Getter Method The hour watch { minuteswatched}
+</p>
+<p> Steter Method</p>
+{minuteswatched}
+    </lightning-card>
+</template>

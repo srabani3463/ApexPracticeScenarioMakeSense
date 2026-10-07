@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Dependent Wire method calling show the TaskList Related to Account">
+
+ {recordId}
+ {accountName}
+ <template for:each={taskList} for:item="Task">
+  <li key={Task.id}>
+    {Task.Id}------{Task.Subject}------{Task.Description}-----{Task.Status}
+  </li>
+
+
+ </template>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,41 @@
+<template>
+    <!--Create a Input-->
+    <!--Filter by fields on table-->
+    <!--sortby -->
+    <!--At the buttom showing data table-->
+    <lightning-card title="Search and Filter Utility" icon-name="utility:search">
+    <div class="slds-p-around_medium">
+        <div class="slds-grid slds-wrap slds-gutters slds-p-bottom_medium">
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-input label="Search" placeholder="Search the test" value={searchText} name="search"
+                    onchange={handleSearchChange}></lightning-input>
+
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-combobox label="Category" value={category} name="category" placeholder="Select Category"
+                    options={categoryOptions} onchange={handleCategoryChange}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-combobox label="Sort By" value={sortBy} name="sortBy" options={sortOptions}
+                    onchange={handleSortChange}>
+                </lightning-combobox>
+            </div>
+        </div>
+
+       
+    
+    <template if:true={filterdata.length}>
+        <lightning-datatable key-field="id" data ={filterdata} columns={columns} hide-checkbox-column>
+</lightning-datatable>
+    </template>
+
+     <template if:false={filterdata.length}>
+        <div class="noinfo">
+        No Result. Try Changing.search Scenario.
+</div>
+    </template>
+</div>
+</lightning-card>
+
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <!--I need to fetch task for a given subject-->
+    <!--I have received all the task for a given subject,
+    then i want to display in a list ststus, record id and description-->
+    <!--to show the list of item we need iterator which is foreach-->
+    <lightning-card title="Search Task By subject">
+        <template for:each={taskList} for:item="task">
+              <li key={task.id}>-<b>{task.Id}</b>-{task.ststus}--{task.ActivityDate}
+                {task.priority}---{task.description}</li>
+
+        </template>
+
+    </lightning-card>
+</template>

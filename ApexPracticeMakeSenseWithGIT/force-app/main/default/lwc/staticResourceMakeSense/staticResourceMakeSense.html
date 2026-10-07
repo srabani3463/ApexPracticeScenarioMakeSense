@@ -1,0 +1,13 @@
+<template>
+    <h1>Salesforce Static Resourec Demo Import Lwc Functionality </h1>
+    <img src={src}/>
+    <p> Please show the user Id {userId}</p>
+    
+    <template lwc:if={showInProd}>
+        Welcome to your production System
+    </template>
+    <template lwc:else>
+        Show In Sandbox System
+    </template>
+
+</template>

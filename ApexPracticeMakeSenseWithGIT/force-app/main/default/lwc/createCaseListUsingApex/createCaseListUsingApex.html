@@ -1,0 +1,19 @@
+<template>
+    <!--get all my cases from the data base that i have quired into lwc 
+    and display them in some sort of table-->
+    <lightning-card title="Display 20 Cases Latest">
+        <!--To display recod we need for each -->
+        <template for:each={caseList} for:item="caseRecord">
+            <li key={caseRecord.Id}>
+   <b>{caseRecord.Id}-{caseRecord.Subject}</b>- {caseRecord.Reason}- {caseRecord.Priority}</li>
+ 
+
+        </template>
+        <template if:true = {errorMessage}>
+
+            <p>Error Message: {errorMessage}</p>
+        </template>
+
+
+    </lightning-card>
+</template>

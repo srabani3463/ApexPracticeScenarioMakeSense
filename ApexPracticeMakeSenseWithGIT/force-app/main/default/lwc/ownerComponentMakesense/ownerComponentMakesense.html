@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="This is Component Composition">
+    <div class="feature-box">
+     Parent Component- Owner<br/>
+    <c-container-child-component  products-found="true" product-list={productList}></c-container-child-component>
+    <lightning-button name="Call Child" label="Call Child" onclick={callChildMethod}></lightning-button>
+    </div>
+    
+    
+    </lightning-card>
+</template>

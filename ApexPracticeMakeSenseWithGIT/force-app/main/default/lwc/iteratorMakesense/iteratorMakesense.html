@@ -1,0 +1,39 @@
+<template>
+    <lightning-card class="feature-box" title="My Task List Iterator Operator">
+        <p>This is Iterator For My Task List</p>
+        <div>
+            <template for:each={taskList} for:item="eachTask">
+            <div key={eachTask.taskid}>
+                {eachTask.taskName}-
+                {eachTask.taskStatus}
+                </div>
+                        </template>
+        </div>
+    </lightning-card>
+    <lightning-card class="feature-box" title="My Task List Iterator through index Iterator">
+        <p>This is Iterator For My Task List</p>
+        <div>
+            <template iterator:task={taskList} >
+                <template lwc:if={task.first}>
+                Top Priority of the day
+            <div key={task.value.taskid}>
+                {task.value.taskName}-
+                {task.value.taskStatus}
+                </div>
+            </template>
+            <div key={task.value.taskid}>
+                {task.value.taskName}-
+                {task.value.taskStatus}
+                </div>
+             <template lwc:if={task.last}>
+                Last Priority of the day
+            <div key={task.value.taskid}>
+                {task.value.taskName}-
+                {task.value.taskStatus}
+                </div>
+            </template>
+ </template>
+        </div>
+    </lightning-card>
+    
+</template>

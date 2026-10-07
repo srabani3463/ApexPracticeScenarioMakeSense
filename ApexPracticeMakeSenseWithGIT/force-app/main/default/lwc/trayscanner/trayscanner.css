@@ -1,0 +1,28 @@
+.tray-image {
+    width: 300px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.instrument-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.instrument-table th,
+.instrument-table td {
+    padding: 8px;
+    border: 1px solid #d8d8d8;
+    text-align: center;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.serial-label {
+    font-weight: bold;
+    margin-top: 8px;
+}

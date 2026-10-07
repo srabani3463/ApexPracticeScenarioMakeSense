@@ -1,0 +1,25 @@
+<template>
+    // display the case and and task 
+    <lightning-card title="Display the task and caes recod in UI">
+        <template if:true = {showCase}>
+       <template for:each={caseList} for:item="caseRecord">
+        <li key={caseRecord.Id}>
+        <b>{caseRecord.Id}</b> 
+         {caseRecord.Origin}
+         {caseRecord.Status}
+         {caseRecord.Description}
+          ></li>
+</template>
+</template>
+<template if:true = {showTask}>
+<template for:each={taskList} for:item="task">
+<li key={task.Id}>
+<b>{task.Id}</b>
+{task.Subject}
+{task.Status}
+</li>
+</template>
+</template>
+
+</lightning-card>
+</template>

@@ -1,0 +1,10 @@
+<template>
+    {userAddress}<br>
+    <template for:each={personalDetails} for:item="details">
+    
+    name From Parents: {details.name}
+    <template for:each={details.friends} for:item="frienddetails">
+        friends details:{frienddetails.friendsCountry} 
+    </template>
+    </template>
+</template>

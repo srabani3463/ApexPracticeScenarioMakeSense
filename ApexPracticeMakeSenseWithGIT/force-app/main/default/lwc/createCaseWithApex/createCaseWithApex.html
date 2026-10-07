@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Custom Form With Apex">
+<!--Allowing the user to put the mandatory input fields, but this time: LDS is not avilable. -->
+<!--Subject, Priority, Type for case form-->
+<div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" value={subject} onchange={populateSubject} label="Enter Subject" placeholder="Subject type here..." required></lightning-input>
+        </div>
+         <lightning-textarea name="Description" value={description} onchange={populateDescription} label="Enter Description" ></lightning-textarea>
+         <lightning-combobox
+            name="Priority"
+            label="Priority"
+            value={priority}
+            onchange={populatePriority}
+              placeholder="Select Priority"
+            options={options}
+             ></lightning-combobox>
+    <div class="slds-m-top_medium">
+            <lightning-button variant="brand" label="Create Case" onclick={createCase} title="Create Case" icon-name="utility:choice" class="slds-m-left_x-small">
+</lightning-button>
+</div>
+    </lightning-card>
+    
+</template>

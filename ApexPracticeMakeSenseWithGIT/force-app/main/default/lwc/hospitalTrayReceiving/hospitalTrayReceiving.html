@@ -1,0 +1,89 @@
+<template>
+    <div class="main">
+
+<h2 class="title">
+On Location Repair Receiving
+</h2>
+
+<div class="search">
+
+<input
+type="text"
+placeholder="Enter Serial Number"
+onchange={handleSearch}
+/>
+
+</div>
+
+<div class="layout">
+
+<!-- LEFT PANEL -->
+
+<div class="left">
+
+<template for:each={trays} for:item="tray">
+
+<div key={tray.trayId} class="trayCard">
+
+<img src={tray.image_Url__c} class="trayImage"/>
+
+<div class="serial">
+
+Serial Number - {tray.serialNumber}
+
+</div>
+
+</div>
+
+</template>
+
+</div>
+
+<!-- RIGHT PANEL -->
+
+<div class="right">
+
+<table>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Required</th>
+<th>Received</th>
+<th>Damaged</th>
+<th>Repaired</th>
+<th>QC</th>
+<th>Exchanged</th>
+</tr>
+</thead>
+
+<template for:each={trays} for:item="tray">
+
+<template for:each={tray.instruments} for:item="inst">
+
+<tr key={inst.Id}>
+
+<td>{inst.Name}</td>
+<td>{inst.Required_Qty__c}</td>
+
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td><input type="number"></td>
+<td><input type="number"></td>
+
+</tr>
+
+</template>
+
+</template>
+
+</table>
+
+
+</div>
+
+</div>
+
+</div>
+    
+</template>

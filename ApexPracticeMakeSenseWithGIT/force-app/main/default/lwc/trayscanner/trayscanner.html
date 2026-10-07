@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="On Location Repair Receiving">
+        <div class="input-area">
+            <lightning-input 
+                label="Scan or Enter Serial Number"
+                value={serial}
+                onchange={handleSerialChange}>
+            </lightning-input>
+            <lightning-button 
+                label="Search"
+                variant="brand"
+                onclick={handleSearch}>
+            </lightning-button>
+        </div>
+        <template if:true={tray}>
+            <div class="tray-area">
+                <img src={tray.Tray_Image__c} class="tray-image"/>
+                <p class="serial-label">
+                    Serial Number: {tray.Serial_Number__c}
+                </p>
+                <p class="tray-type">Tray Type: {tray.Tray_Type__c}</p>
+                <table class="instrument-table">
+                    <thead>
+                        <tr>
+                            <th>Instrument</th>
+                            <th>Required</th>
+                            <th>Received</th>
+                            <th>Damaged</th>
+                            <th>Repaired</th>
+                            <th>QC</th>
+                            <th>Exchanged</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={tray.Tray_Instruments__r} for:item="inst">
+                            <tr key={inst.Id}>
+                                <td>{inst.Instrument_Name__c}</td>
+                                <td>{inst.Required_Quantity__c}</td>
+                                <td>{inst.Received_Quantity__c}</td>
+                                <td>{inst.Damaged_Quantity__c}</td>
+                                <td>{inst.Repaired_Quantity__c}</td>
+                                <td>{inst.QC_Passed__c}</td>
+                                <td>{inst.Exchanged_Quantity__c}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+    </lightning-card>
+    
+</template>

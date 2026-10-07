@@ -1,0 +1,11 @@
+<template>
+    <lightning-card class="feature-box" title="This is parent component to fire Event">
+    Received This vslue From Child: {showFinalValue.id} {showFinalValue.name}
+    {selectedProduct.id}
+    {selectedProduct.name}
+     {timestamp}
+     {selectedBy}
+
+    <c-child-event-trigger onsendproductselected = {handleProductSelection}></c-child-event-trigger>
+    </lightning-card>
+</template>

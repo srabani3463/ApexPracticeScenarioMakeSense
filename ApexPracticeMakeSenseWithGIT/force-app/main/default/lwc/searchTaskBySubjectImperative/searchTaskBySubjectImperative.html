@@ -1,0 +1,46 @@
+<template>
+    <!--I want the user to input the subject strings, once they do it-->
+    <!--I want to click a button, when they click a button i want to call apex method
+    returns the data, i want to display in a tabele-->
+    <lightning-card title="Search task by subject Imperatively">
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <!-- Default/basic -->
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" value={subject} onchange={handleSubjectChange}
+             label="Enter Subject" placeholder="type here..." required>
+
+            </lightning-input>
+        </div>
+        <div class="slds-p-around_medium lgc-bg">
+<lightning-button variant="brand" label="Search" title="Search" onclick={searchTask}
+ class="slds-m-left_x-small"></lightning-button>
+
+        </div>
+    </div>
+    <template if:true={showTable}>
+    <table class="slds-p-around_medium lgc-bg slds-table">
+  <tr >
+    <th>Id</th>
+    <th>Subject</th>
+    <th>Priority</th>
+    <th>ActivityDate</th>
+    <th>Status</th>
+  </tr>
+  
+<template for:each={taskList} for:item="task">
+    
+ <tr key={task.Id}>
+    <td>{task.Id}</td>
+    <td>{task.Subject}</td>
+    <td>{task.Priority}</td>
+    <td>{task.ActivityDate}</td>
+    <td>{task.Status}</td>
+    
+  </tr>
+  </template>
+  </table>
+  </template>
+  
+
+    </lightning-card>
+</template>
